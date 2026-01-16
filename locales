@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Parrilla Naroda • GastroArias</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #8d1e1e;
+      --secondary: #3a5f2a;
+      --accent: #d97706;
+      --text: #222;
+      --light: #f8f5f0;
+      --gray: #555;
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background: var(--light);
+      line-height: 1.7;
+    }
+    h1, h2, h3 { font-family: 'Playfair Display', serif; }
+
+    .header {
+      background: white;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+      position: sticky;
+      top:0; z-index:100;
+      padding: 1.2rem 6%;
+    }
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo { font-size: 2.2rem; color: var(--primary); font-weight:700; }
+    .main-nav ul { display: flex; gap: 2.2rem; list-style: none; font-weight:500; }
+    .main-nav a:hover { color: var(--primary); }
+
+    .hero-local {
+      height: 60vh;
+      min-height: 500px;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+                  url('https://images.unsplash.com/photo-1544029616884-8f0d0ec26e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2340&q=80') center/cover;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero-local h1 { font-size: 4.5rem; text-shadow: 0 4px 14px rgba(0,0,0,0.8); }
+    .hero-local .subtitle { font-size: 1.6rem; margin-top: 1rem; opacity: 0.9; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 6%; }
+
+    .info-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin: 5rem 0;
+    }
+    .info-text h2 { font-size: 2.8rem; color: var(--primary); margin-bottom: 1.5rem; }
+    .info-text h3 { font-size: 1.8rem; color: var(--secondary); margin: 2rem 0 1rem; }
+    .info-text p, .info-text ul { font-size: 1.1rem; color: var(--gray); }
+    .info-text ul { list-style: disc; padding-left: 1.8rem; margin: 1rem 0; }
+    .info-text .highlight { color: var(--accent); font-weight: 600; }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 4rem 0;
+    }
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .reviews-section { margin: 5rem 0; }
+    .reviews-section h2 { font-size: 2.6rem; color: var(--primary); text-align: center; margin-bottom: 2rem; }
+    .rating-summary { text-align: center; margin-bottom: 3rem; }
+    .rating-summary .stars { font-size: 2.5rem; color: #f59e0b; margin-bottom: 0.5rem; }
+    .rating-summary p { font-size: 1.3rem; font-weight: 600; }
+    .review-card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      border-left: 5px solid var(--accent);
+    }
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .review-header h4 { font-size: 1.3rem; margin: 0; }
+    .review-header .date { color: var(--gray); font-size: 0.95rem; }
+    .review-stars { color: #f59e0b; font-size: 1.4rem; }
+    .review-text { font-size: 1.05rem; color: var(--gray); }
+
+    .contact-box {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.09);
+      text-align: center;
+      margin: 4rem 0;
+    }
+    .contact-box h3 { font-size: 2rem; color: var(--primary); margin-bottom: 1.5rem; }
+    .contact-box p { font-size: 1.15rem; margin: 1rem 0; }
+
+    .map-embed {
+      margin: 4rem 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.09);
+    }
+
+    footer {
+      background: #111;
+      color: #bbb;
+      padding: 4rem 6% 2rem;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .info-section { grid-template-columns: 1fr; }
+      .hero-local h1 { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="nav-container">
+      <div class="logo"><a href="index.html">Anden Sud</a></div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#">Restaurantes</a></li>
+          <li><a href="#">Bares & Cervecerías</a></li>
+          <li><a href="#">Boliches</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-local">
+    <div>
+      <h1>Parrilla Naroda</h1>
+      <p class="subtitle">Un clásico de la Ruta 8 – Carnes a la llama y sabores del campo cordobés</p>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <section class="info-section">
+      <div class="info-text">
+        <h2>El lugar que no podés dejar de visitar en Arias</h2>
+        <p>Parrilla Naroda es un ícono tradicional. Ubicada estratégicamente en la Ruta 8 Km 412, es parada obligada para viajeros, lugareños y familias que buscan un asado de calidad sin complicaciones.</p>
+        
+        <h3>Lo que más destaca</h3>
+        <ul>
+          <li>Carnes seleccionadas y cocinadas a la perfección en leña y carbón.</li>
+          <li>Clásicos como <span class="highlight">ojo de bife</span>, <span class="highlight">costillares</span>, <span class="highlight">asado de tira</span> y achuras frescas.</li>
+          <li>Guarniciones caseras: papas a la provenzal, ensaladas frescas y provoleta al horno.</li>
+          <li>Ambiente familiar, espacioso y con estacionamiento amplio.</li>
+          <li>Buena relación precio-calidad – ideal para grupos.</li>
+        </ul>
+
+        <h3>Horarios</h3>
+        <p>Martes a domingos de 11:30 a 15:00 y de 19:30 a 00:00.<br> (Lunes cerrado – confirmar por temporada)</p>
+
+        <h3>Recomendación del equipo Anden Sud</h3>
+        <p>Pedí la tabla mixta para compartir y no te pierdas la provoleta con orégano. Si vas en familia, el postre casero (flan o budín de pan) cierra perfecto.</p>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1606857521015-7f9fcf423740?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Asado en parrilla Naroda" style="border-radius:12px; width:100%; box-shadow:0 8px 20px rgba(0,0,0,0.15);">
+      </div>
+    </section>
+
+    <h2 style="font-size:2.6rem; color:var(--primary); text-align:center; margin:5rem 0 3rem;">Galería</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1544029616884-8f0d0ec26e3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Carnes a la parrilla">
+      <img src="https://images.unsplash.com/photo-1555939594-58056f625634?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Plato principal">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Interior del local">
+      <img src="https://images.unsplash.com/photo-1574259395896-0eaaa79e0a78?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ambiente familiar">
+    </div>
+
+    <section class="reviews-section">
+      <h2>Reseñas de clientes</h2>
+      <div class="rating-summary">
+        <div class="stars">★★★★★</div>
+        <p>Promedio 4.9 / 5 (basado en reseñas locales y visitantes)</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <h4>Juan Pérez</h4>
+          <span class="date">Enero 2026</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">La carne es espectacular, tierna y en su punto justo. El asado de tira es de los mejores que probé en la zona. Atención impecable, muy recomendable para familias o grupos. ¡Volvemos siempre!</p>
+      </div>
+
+      <div class="review-card">
+        <div class="review-header">
+          <h4>María Gómez</h4>
+          <span class="date">Diciembre 2025</span>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Un clásico que no falla. Las achuras frescas y la provoleta son obligadas. Ambiente familiar, precios razonables y porciones generosas. Ideal para un domingo de campo. 10 puntos.</p>
+      </div>
+
+      <!-- Agregá más reseñas reales cuando las tengas -->
+    </section>
+
+    <div class="contact-box">
+      <h3>¿Querés reservar o preguntar?</h3>
+      <p><strong>Dirección:</strong> Ruta Nacional 8 Km 410, Arias, Córdoba</p>
+      <p><strong>Teléfono:</strong> (3468) 15-XXXXXX</p>
+      <p><strong>Instagram:</strong> @parrilla_naroda</p>
+      <a href="https://wa.me/5493468XXXXXX?text=Hola!%20Quiero%20reservar%20mesa%20en%20Parrilla%20Naroda" class="btn" target="_blank">Reservar por WhatsApp</a>
+    </div>
+
+    <div class="map-embed">
+      <!-- Reemplazá con el iframe real de Google Maps -->
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3360.123456789!2d-62.123456789!3d-33.123456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDA3JzI5LjciUyA2MsKwMDcnMjguNiJX!5e0!3m2!1ses!2sar!4v1698765432109" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Anden Sud • Tu guía gastronómica de Arias y la región • <a href="index.html" style="color:#d97706;">Volver al inicio</a></p>
+  </footer>
+
+</body>
+</html>
