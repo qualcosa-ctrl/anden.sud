@@ -54,8 +54,8 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo { font-size: 2.2rem; color: var(--primary); font-weight:500; }
-    .main-nav ul { display: flex; gap: 2.2rem; list-style: none; font-weight:500; }
+    .logo { font-size: 2.2rem; color: var(--primary); font-weight:700; }
+    .main-nav ul { display: flex; gap: 2.2rem; list-style: none; font-weight:430; }
     .main-nav a:hover { color: var(--primary); }
 
     .hero {
@@ -245,67 +245,105 @@
   height: 250px;
   object-fit: cover;
 }
-    /* Título más impactante para la sección */
+    /* Sección completa */
+.protagonistas-section {
+  max-width: 1400px;
+  margin: 5rem auto;
+  padding: 0 6%;
+}
+
 .protagonistas-title {
-  font-size: 3rem;                /* más grande que los otros títulos (2.6rem) */
-  margin: 5rem 0 3rem;
+  font-size: 3rem;
   text-align: center;
+  margin-bottom: 3rem;
 }
 
-/* Grid con menos columnas para que cada tarjeta sea más ancha */
-.protagonistas-grid {
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); /* más ancho que el grid normal (340px) */
-  gap: 3rem;                      /* más espacio entre tarjetas grandes */
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Tarjetas protagonistas más grandes y destacadas */
+/* Tarjeta protagonista – full-width, horizontal */
 .protagonista-card {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  background: white;
   border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.15); /* sombra más fuerte */
+  box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+  margin-bottom: 3rem;
+  height: 320px;               /* altura fija moderada – ajustá si querés más/menos */
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .protagonista-card:hover {
-  transform: translateY(-12px) scale(1.03); /* efecto zoom + lift más pronunciado */
+  transform: translateY(-12px);
   box-shadow: 0 24px 48px rgba(0,0,0,0.2);
 }
 
+/* Imagen a la izquierda (50% ancho aprox.) */
 .protagonista-img {
-  height: 380px !important;       /* imágenes más altas y prominentes */
-  background-position: center 30%; /* enfoca más arriba si es retrato */
+  width: 45%;
+  background-size: cover;
+  background-position: center;
 }
 
-.protagonista-body {
-  padding: 2rem;                  /* más padding interno */
+/* Contenido a la derecha */
+.protagonista-content {
+  width: 55%;
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.protagonista-body h3 {
-  font-size: 1.8rem;              /* título más grande */
-  margin-bottom: 1rem;
-  line-height: 1.3;
-}
-
-.protagonista-body p {
+.protagonista-type {
+  color: var(--secondary);
   font-size: 1.1rem;
-  color: var(--text);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.protagonista-content h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+
+.protagonista-content p {
+  font-size: 1.15rem;
+  color: var(--gray);
   margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
-.protagonista-body .card-type {
+.protagonista-location {
   font-size: 1rem;
-  margin-bottom: 0.8rem;
+  color: var(--accent);
+  font-style: italic;
 }
 
-/* Responsive: en mobile, vuelve a grid simple */
+/* Clickable total en toda la tarjeta */
+.protagonista-card .card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Responsive: en mobile, pasa a vertical (imagen arriba, texto abajo) */
 @media (max-width: 768px) {
-  .protagonistas-grid {
-    grid-template-columns: 1fr;
+  .protagonista-card {
+    flex-direction: column;
+    height: auto;
+    min-height: 500px;
   }
   .protagonista-img {
-    height: 320px !important;
+    width: 100%;
+    height: 300px;
+  }
+  .protagonista-content {
+    width: 100%;
+    padding: 2rem;
+  }
+  .protagonista-content h3 {
+    font-size: 1.8rem;
   }
 }
     
@@ -429,30 +467,36 @@
     </div>
   </article>
 
-     <h2 class="section-title protagonistas-title">Protagonistas</h2>
-<div class="grid protagonistas-grid">
-  <article class="card protagonista-card" data-category="protagonista">
-    <div class="card-img protagonista-img" style="background-image: url('https://images.unsplash.com/photo-1556911220-b0b27ebfa2f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); height: 380px;"></div>
-    <div class="card-body protagonista-body">
-      <div class="card-type">Chef Destacado</div>
+     <!-- Sección Protagonistas – tarjetas anchas full-width -->
+<section class="protagonistas-section">
+  <h2 class="section-title protagonistas-title">Protagonistas</h2>
+
+  <!-- Tarjeta 1 -->
+  <article class="protagonista-card">
+    <div class="protagonista-img" style="background-image: url('https://images.unsplash.com/photo-1556911220-b0b27ebfa2f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="protagonista-content">
+      <div class="protagonista-type">Chef Destacado</div>
       <h3>Gustavo Brarda</h3>
-      <p>Maestro parrillero cordobés con trayectoria en los mejores fogones del sur. Su técnica en asados a la llama es legendaria en la región.</p>
-      <div class="card-location">Arias, Córdoba</div>
+      <p>Maestro parrillero con más de 20 años en el sur cordobés. Su técnica en asados a la llama y uso de leña nativa lo convierten en referencia obligada para cualquier amante del buen fuego en Arias y alrededores.</p>
+      <div class="protagonista-location">Arias, Córdoba</div>
       <a href="protagonistas/gustavo-brarda.html" class="card-link"></a>
     </div>
   </article>
 
-  <!-- Duplicá para más protagonistas (3-5 tarjetas recomendadas) -->
-  <article class="card protagonista-card" data-category="protagonista">
-    <div class="card-img protagonista-img" style="background-image: url('https://images.unsplash.com/photo-1577219491135-ce391730e688?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'); height: 380px;"></div>
-    <div class="card-body protagonista-body">
-      <div class="card-type">Emprendedora Gastronómica</div>
+  <!-- Tarjeta 2 -->
+  <article class="protagonista-card">
+    <div class="protagonista-img" style="background-image: url('https://images.unsplash.com/photo-1577219491135-ce391730e688?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="protagonista-content">
+      <div class="protagonista-type">Emprendedora Local</div>
       <h3>María López</h3>
-      <p>Fundadora de cervecería artesanal local y promotora de productos regionales. Su pasión por la cerveza artesanal impulsa la escena de Arias.</p>
-      <div class="card-location">Alejo Ledesma</div>
+      <p>Fundadora de la primera cervecería artesanal de la región. Promueve ingredientes locales y organiza catas que reúnen a toda la comunidad gastronómica del sur de Córdoba.</p>
+      <div class="protagonista-location">Alejo Ledesma</div>
       <a href="protagonistas/maria-lopez.html" class="card-link"></a>
     </div>
   </article>
+
+  <!-- Agregá más tarjetas aquí (3–5 en total suele ser ideal para esta sección) -->
+</section>
 
   <!-- Agregá más aquí -->
 </div>
