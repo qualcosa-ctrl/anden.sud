@@ -525,7 +525,8 @@
   
   </article>
 </section>
-<div class="grid">
+<section>
+    <div class="grid">
   <!-- Ejemplo de tarjetas mixtas -->
   <h2 class="section-title">Comer y Dormir</h2>
   <article class="card" data-category="hospedaje">
@@ -539,14 +540,14 @@
     </div>
   </article>
   <!-- Duplicá para más -->
-</div>
+
       
       <!-- Agregá más cards aquí con su data-category correspondiente -->
 
     </div>
 
   </div>
-
+</section>
   <footer>
     <p>© 2026 Anden Sud • Tu guía gastronómica de Arias y la región • Hecho con pasión por lo local</p>
   </footer>
@@ -651,7 +652,7 @@ if (bannerSlider) {
   }
 
   function nextSlide() {
-    currentIndex = (currentIndex + 2) % slideCount;
+    currentIndex = (currentIndex + 1) % slideCount;
     showSlide(currentIndex);
   }
 
