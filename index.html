@@ -238,11 +238,6 @@
   position: relative;
 }
 
-      .slide2 {
-  min-width: 100%;
-  height: 100%;
-  position: relative;
-}
 .slides img {
   min-width: 100%;
   height: 250px;
@@ -656,7 +651,7 @@ if (bannerSlider) {
   }
 
   function nextSlide() {
-    currentIndex = (currentIndex + 2) % slideCount;
+    currentIndex = (currentIndex + 1) % slideCount;
     showSlide(currentIndex);
   }
 
