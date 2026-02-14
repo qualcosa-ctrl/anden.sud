@@ -36,7 +36,7 @@
     }
     h1, h2, h3 {
   font-family: 'Poppins', system-ui, -apple-system, sans-serif;
-  font-weight: 600;   /* o 700 para más impacto en títulos */
+  font-weight: 600;   
 }
 
     .header {
@@ -66,7 +66,8 @@
       font-size:12px; 
       font-weight:500; 
     }
-    .main-nav a:hover { color: var(--accent); }
+    .main-nav a:hover { color: var(--accent); 
+    }
 
 .hamburger {
   display: none;           /* (solo visible en pantalla chica) */
@@ -95,42 +96,6 @@
 .nav-menu li {
   margin: 0;
     }
-@media (max-width: 768px) {
-  .main-nav {
-    position: absolute;      /* Posición absoluta para desplegar */
-    top: 100%;              /* Debajo del header */
-    left: 0;
-    width: 100%;
-    background: var(--negro); /* Fondo negro como el header */
-    transform: translateY(-100%); /* Oculto por defecto (arriba) */
-    transition: transform 0.3s ease; /* Animación suave */
-    z-index: 1000;
-  }
-  .nav-menu {
-    flex-direction: column;  /* Vertical en móviles */
-    gap: 1rem;
-    padding: 1rem;
-    text-align: center;
-  }
-  .hamburger {
-    display: flex;          /* Visible en móviles */
-  }
-  /* Clase para mostrar el menú (agregada por JS) */
-  .main-nav.open {
-    transform: translateY(0); /* Muestra el menú */
-  }
-  /* Animación de las líneas del hamburguesa al abrir */
-  .hamburger.open .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  .hamburger.open .bar:nth-child(2) {
-    opacity: 0;
-  }
-  .hamburger.open .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-}
-
 
     .hero {
       background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.7)),
@@ -455,6 +420,41 @@
       .hero h1 { font-size: 2.8rem; }
       .main-nav ul { gap: 1.4rem; font-size: 0.95rem; flex-wrap: wrap; justify-content: center; }
     }
+      @media (max-width: 768px) {
+  .main-nav {
+    position: absolute;      /* Posición absoluta para desplegar */
+    top: 100%;              /* Debajo del header */
+    left: 0;
+    width: 100%;
+    background: var(--negro); /* Fondo negro como el header */
+    transform: translateY(-100%); /* Oculto por defecto (arriba) */
+    transition: transform 0.3s ease; /* Animación suave */
+    z-index: 1000;
+  }
+  .nav-menu {
+    flex-direction: column;  /* Vertical en móviles */
+    gap: 1rem;
+    padding: 1rem;
+    text-align: center;
+  }
+  .hamburger {
+    display: flex;          /* Visible en móviles */
+  }
+  /* Clase para mostrar el menú (agregada por JS) */
+  .main-nav.open {
+    transform: translateY(0); /* Muestra el menú */
+  }
+  /* Animación de las líneas del hamburguesa al abrir */
+  .hamburger.open .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  .hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.open .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
   </style>
 </head>
 <body>
