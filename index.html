@@ -18,7 +18,7 @@
   
   <style>
     :root {
-      --primary: #8d1e1e;
+      --primary: #d12c30;
       --secondary: #1f5c42;
       --accent: #d97706;
       --text: #222;
@@ -39,7 +39,7 @@
 }
 
     .header {
-      background: white;
+      background: var(--primary);
       box-shadow: 0 3px 12px rgba(0,0,0,0.08);
       position: sticky;
       top:0; z-index:100;
@@ -52,8 +52,8 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo { font-size: 2.1rem; color: var(--primary); font-weight:700; }
-    .main-nav ul { display: flex; gap: 2rem; list-style: none; font-weight:500; }
+    .logo { font-size: 2rem; color: #fbf0dc; font-weight:700; }
+    .main-nav ul { display: flex; gap: 2rem; list-style: none; font-size:12px;  font-weight:500; }
     .main-nav a:hover { color: var(--primary); }
 
     .hero {
@@ -120,7 +120,7 @@
       max-width: 1200px;
     }
     .cat-btn {
-      background: #d5e3d8;
+      background: #c4c7b4;
       color: var(--secondary);
       padding: 0.8rem 1.8rem;
       border-radius: 50px;
