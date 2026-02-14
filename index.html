@@ -377,26 +377,25 @@
   }
 }
     /* Media queries para responsive */
-@media (max-width: 768px) {  /* Tablets y móviles */
+ /* Tablets y móviles */
   .slider-container {
     height: 200px;  /* Altura más pequeña en móviles */
   }
   .slides img {
     height: 200px;  /* Ajusta altura */
   }
-}
 
-@media (max-width: 480px) {  /* Móviles pequeños */
+ /* Móviles pequeños */
   .slider-container {
     height: 150px;  /* Aún más pequeño */
   }
   .slides img {
    height: 150px;
  }
-}
+
 
 /* Responsive: en mobile, pasa a vertical (imagen arriba, texto abajo) */
-@media (max-width: 768px) {
+
   .protagonista-card {
     flex-direction: column;
     height: auto;
@@ -413,14 +412,10 @@
   .protagonista-content h3 {
     font-size: 1.8rem;
   }
-}
+  .hero { padding: 9rem 6% 6rem; }
+  .hero h1 { font-size: 2.8rem; }
+  .main-nav ul { gap: 1.4rem; font-size: 0.95rem; flex-wrap: wrap; justify-content: center; }
     
-    @media (max-width: 768px) {
-      .hero { padding: 9rem 6% 6rem; }
-      .hero h1 { font-size: 2.8rem; }
-      .main-nav ul { gap: 1.4rem; font-size: 0.95rem; flex-wrap: wrap; justify-content: center; }
-    }
-      @media (max-width: 768px) {
   .main-nav {
     position: absolute;      /* Posición absoluta para desplegar */
     top: 100%;              /* Debajo del header */
