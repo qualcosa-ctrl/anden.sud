@@ -777,6 +777,14 @@ if (bannerSlider) {
   // Iniciar mostrando el primero
   showSlide(0);
 }
+    // Toggle del menú hamburguesa
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('.main-nav');
+
+hamburger.addEventListener('click', () => {
+  nav.classList.toggle('open');      // Agrega/quita la clase 'open' al nav
+  hamburger.classList.toggle('open'); // Anima las líneas del botón
+});
   </script>
 
 </body>
