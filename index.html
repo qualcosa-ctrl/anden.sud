@@ -218,7 +218,7 @@
 
 .banner-slider {
   max-width: 100%;
-  margin: 0rem auto;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
 }
@@ -241,7 +241,7 @@
 
 .slides img {
   min-width: 100%;
-  height: 250px;
+  height: 100%;
   object-fit: cover;
 }
     /* Sección completa */
@@ -335,6 +335,24 @@
   .logo {
     max-width: 120px;
   }
+}
+    /* Media queries para responsive */
+@media (max-width: 768px) {  /* Tablets y móviles */
+  .slider-container {
+    height: 200px;  /* Altura más pequeña en móviles */
+  }
+  .slides img {
+    height: 200px;  /* Ajusta altura */
+  }
+}
+
+@media (max-width: 480px) {  /* Móviles pequeños */
+  .slider-container {
+    height: 150px;  /* Aún más pequeño */
+  }
+  .slides img {
+   height: 150px;
+ }
 }
 
 /* Responsive: en mobile, pasa a vertical (imagen arriba, texto abajo) */
