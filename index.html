@@ -53,7 +53,7 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo { font-size: 2rem; color: #fbf0dc; font-weight:700; }
+    
     .main-nav ul { display: flex; gap: 2rem; list-style: none; color: white; font-size:12px;  font-weight:500; }
     .main-nav a:hover { color: var(--primary); }
 
@@ -324,6 +324,17 @@
   position: absolute;
   inset: 0;
   z-index: 1;
+}
+  .logo {
+  max-width: 150px;  /* Ajusta el tamaño máximo */
+  height: auto;      /* Mantiene proporción */
+  display: block;    /* Para que no haya espacio extra */
+}
+/* Para móviles, hazlo más pequeño */
+@media (max-width: 768px) {
+  .logo {
+    max-width: 120px;
+  }
 }
 
 /* Responsive: en mobile, pasa a vertical (imagen arriba, texto abajo) */
